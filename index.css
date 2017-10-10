@@ -12,6 +12,7 @@ body {
 /* Styles for bday calendar */
 .bday-cal .page-title {
   text-align: center;
+  font-weight: 300;
 }
 
 .bday-cal .weekdays {
