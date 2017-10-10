@@ -56,7 +56,7 @@ function render(groups) {
         if (!member) {
           html.push(`<div class="member empty"></div>`);
         } else {
-          html.push(`<div class="member">${getInitials(member.name)}</div>`)
+          html.push(`<div class="member" style="background-color: ${getRandomRolor()};">${getInitials(member.name)}</div>`)
         }
       }
 
@@ -80,7 +80,7 @@ function getMatrixScale(length) {
 
   let i = 2;
 
-  while (length > i * i ) {
+  while (length > i * i) {
     i++;
   }
 
@@ -89,4 +89,15 @@ function getMatrixScale(length) {
 
 function getInitials(name) {
   return name.split(' ').map(item => item[0]).join('');
+}
+
+function getRandomRolor() {
+  var letters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var color = '#';
+
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.round(Math.random() * 10)];
+  }
+
+  return color;
 }

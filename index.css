@@ -59,6 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #fff;
 }
 
 .bday-cal .weekdays .weekday .members .member.empty::before {
