@@ -21,7 +21,7 @@ body {
 }
 
 .bday-cal .weekdays .weekday {
-  width: 200px;
+  width: 150px;
 }
 
 .bday-cal .weekdays .weekday .title {
@@ -40,7 +40,7 @@ body {
   display: flex;
   align-items: stretch;
   flex-direction: column;
-  height: 200px;
+  height: 150px;
   background-color: #fff;
 }
 
