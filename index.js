@@ -44,25 +44,26 @@ function render(groups) {
   for (day in groups) {
     const birthdays = groups[day];
     const scale = getMatrixScale(birthdays.length);
-    let html = [];
+    let html = [`<div class="members-row">`];
     console.log(birthdays);
 
-    for (let i = 0; i < scale; i++) {
-      html.push(`<div class="members-row">`);
-
-      for (let j = 0; j < scale; j++) {
-        const member = birthdays[i + j];
-
-        if (!member) {
-          html.push(`<div class="member empty"></div>`);
-        } else {
-          html.push(`<div class="member" style="background-color: ${getRandomRolor()};">${getInitials(member.name)}</div>`)
-        }
+    for (let i = 0; i < scale * scale; i++) {
+      if (i > birthdays.length - 1) {
+        html.push(`<div class="member empty"></div>`);
+      } else {
+        html.push(
+          `<div class="member" style="background-color: ${getRandomRolor()}">
+          ${getInitials(birthdays[i].name)}
+          </div>`
+        );
       }
 
-      html.push(`</div>`);
+      if ((i + 1) % scale === 0 && (i + 1) < scale * scale) {
+        html.push(`</div><div class="members-row">`);
+      }
     }
 
+    html.push(`</div>`);
     document.querySelector(`.weekday.weekday-${day} .members`).innerHTML = html.join('');
   }
 }
@@ -96,7 +97,7 @@ function getRandomRolor() {
   var color = '#';
 
   for (var i = 0; i < 6; i++) {
-    color += letters[Math.round(Math.random() * 10)];
+    color += letters[Math.floor(Math.random() * 10)];
   }
 
   return color;
