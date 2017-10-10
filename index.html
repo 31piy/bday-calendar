@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Birthday cal</title>
+  <link href="index.css" rel="stylesheet">
+</head>
+
+<body class="bday-cal">
+  <h1 class="page-title">Birthday Calendar</h1>
+
+  <div class="weekdays">
+    <div class="weekday">
+      <div class="title">Mon</div>
+      <div class="members">
+        <div class="members-row">
+          <div class="member">HE</div>
+          <div class="member">HE</div>
+        </div>
+        <div class="members-row">
+          <div class="member">HE</div>
+          <div class="member empty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="user-controls">
+    <section class="left-section">
+      <textarea class="user-control" rows="25" id="json-input"></textarea>
+    </section>
+    <section class="right-section">
+      <label for="year-input">Year</label>
+      <input type="text" id="year-input">
+      <button id="update-button">Update</button>
+    </section>
+  </div>
+</body>
+
+</html>

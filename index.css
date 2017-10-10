@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #eee;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for bday calendar */
+.bday-cal .page-title {
+  text-align: center;
+}
+
+.bday-cal .weekdays {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.bday-cal .weekdays .weekday {
+  width: 200px;
+}
+
+.bday-cal .weekdays .weekday .title {
+  text-transform: uppercase;
+  padding: 10px;
+  text-align: right;
+  background-color: #DEA3FF;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.bday-cal .weekdays .weekday .members {
+  border: 1px solid #ccc;
+  border-top: none;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  height: 200px;
+  background-color: #fff;
+}
+
+.bday-cal .weekdays .weekday .members:empty {
+  background-color: #ccc;
+}
+
+.bday-cal .weekdays .weekday .members .members-row {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.bday-cal .weekdays .weekday .members .member {
+  flex: 1 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bday-cal .weekdays .weekday .members .member.empty::before {
+  content: 'XY';
+  color: #fff;
+  background-color: #fff;
+}
+
+.bday-cal .user-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bday-cal .user-controls section {
+  width: 47%;
+}
+
+.bday-cal .user-controls #json-input {
+  width: 100%;
+  font-family: monospace;
+}
+
+.bday-cal .user-controls label {
+  margin-bottom: 10px;
+}
+
+.bday-cal .user-controls #year-input {
+  display: block;
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.bday-cal .user-controls #update-button {
+  display: block;
+  font-size: large;
+  margin-top: 10px;
+}
